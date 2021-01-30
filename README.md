@@ -7,3 +7,5 @@ An official implementation of Rapid and Accurate Video Quality Evaluator (RAPIQU
   - Deep learning toolbox (ResNet-50)
 - Python3
 - Sklearn
+- FFmpeg
+- Git LFS
