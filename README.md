@@ -27,10 +27,11 @@ For more evaluation codes, please check out [VIDEVAL](https://github.com/vztu/VI
 
 Scatter plots and fitted logistic curves on these datasets:
 
- ![KONVID-1K](https://github.com/vztu/RAPIQUE/blob/main/figures/KONVID_1K_kfCV_corr.png)
- ![LIVE-VQC](https://github.com/vztu/RAPIQUE/blob/main/figures/LIVE_VQC_kfCV_corr.png)
- ![YouTube-UGC](https://github.com/vztu/RAPIQUE/blob/main/figures/YOUTUBE_UGC_kfCV_corr.png)
- ![All-Combined](https://github.com/vztu/RAPIQUE/blob/main/figures/ALL_COMBINED_kfCV_corr.png)
+
+| KonVid-1k             |  LIVE-VQC  | YouTube-UGC | All-Combined |
+|:-------------------------:|:-------------------------:
+|![](https://github.com/vztu/RAPIQUE/blob/main/figures/KONVID_1K_kfCV_corr.png)  |  ![](https://github.com/vztu/RAPIQUE/blob/main/figures/LIVE_VQC_kfCV_corr.png) | ![](https://github.com/vztu/RAPIQUE/blob/main/figures/YOUTUBE_UGC_kfCV_corr.png) | ![](https://github.com/vztu/RAPIQUE/blob/main/figures/ALL_COMBINED_kfCV_corr.png)
+
 
 ### Speed
 
@@ -43,11 +44,15 @@ The unit is average `secs/video`.
 | TLVQM        | 34.5  | 78.9 | 183.8 | 969.3 |
 | RAPIQUE      | 13.5 | 17.3 | 18.3 | 112 |
 
-![Speed w.r.t. input sizes](https://github.com/vztu/RAPIQUE/blob/main/figures/speed_scales.jpg)
+<p float="left">
+  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/speed_scales.jpg" width="100" />
+</p>
 
 ### Performance vs. Speed
 
-![Performance vs. Speed](https://github.com/vztu/RAPIQUE/blob/main/figures/perf_n_speed.jpg)
+<p float="left">
+  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/perf_n_speed.jpg" width="100" />
+</p>
 
 ## Demos
 
@@ -94,6 +99,14 @@ If you use this code for your research, please cite our papers.
   author={Tu, Zhengzhong and Chen, Chia-Ju and Wang, Yilin and Birkbeck, Neil and Adsumilli, Balu and Bovik, Alan C},
   booktitle={2021 Picture Coding Symposium (PCS)},
   pages={1--5},
+  year={2021},
+  organization={IEEE}
+}
+@inproceedings{tu2021temporal,
+  title={A Temporal Statistics Model For UGC Video Quality Prediction},
+  author={Tu, Zhengzhong and Chen, Chia-Ju and Wang, Yilin and Birkbeck, Neil and Adsumilli, Balu and Bovik, Alan C},
+  booktitle={2021 IEEE International Conference on Image Processing (ICIP)},
+  pages={1454--1458},
   year={2021},
   organization={IEEE}
 }
