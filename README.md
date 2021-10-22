@@ -29,7 +29,7 @@ Scatter plots and fitted logistic curves on these datasets:
 
 
 | KonVid-1k             |  LIVE-VQC  | YouTube-UGC | All-Combined |
-|:-------------------------:|:-------------------------:
+|:-------------------------:|:-------------------------:|:-------:|:-------:|
 |![](https://github.com/vztu/RAPIQUE/blob/main/figures/KONVID_1K_kfCV_corr.png)  |  ![](https://github.com/vztu/RAPIQUE/blob/main/figures/LIVE_VQC_kfCV_corr.png) | ![](https://github.com/vztu/RAPIQUE/blob/main/figures/YOUTUBE_UGC_kfCV_corr.png) | ![](https://github.com/vztu/RAPIQUE/blob/main/figures/ALL_COMBINED_kfCV_corr.png)
 
 
@@ -45,13 +45,13 @@ The unit is average `secs/video`.
 | RAPIQUE      | 13.5 | 17.3 | 18.3 | 112 |
 
 <p float="left">
-  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/speed_scales.jpg" width="100" />
+  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/speed_scales.jpg" width="400" />
 </p>
 
 ### Performance vs. Speed
 
 <p float="left">
-  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/perf_n_speed.jpg" width="100" />
+  <img src="https://github.com/vztu/RAPIQUE/blob/main/figures/perf_n_speed.jpg" width="400" />
 </p>
 
 ## Demos
