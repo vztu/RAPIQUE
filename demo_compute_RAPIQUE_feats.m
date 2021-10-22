@@ -10,7 +10,7 @@ addpath(genpath('include'));
 %%
 % parameters
 algo_name = 'RAPIQUE'; % algorithm name, eg, 'V-BLIINDS'
-data_name = 'KONVID_1K';  % dataset name, eg, 'KONVID_1K'
+data_name = 'LIVE_VQA';  % dataset name, eg, 'KONVID_1K'
 write_file = true;  % if true, save features on-the-fly
 log_level = 0;  % 1=verbose, 0=quite
 
@@ -23,6 +23,12 @@ elseif strcmp(data_name, 'LIVE_VQC')
 elseif strcmp(data_name, 'YOUTUBE_UGC')
     root_path = '/media/ztu/Seagate-ztu-ugc/YT_UGC';
     data_path = '/media/ztu/Seagate-ztu-ugc/YT_UGC/original_videos';
+elseif strcmp(data_name, 'LIVE_HFR')
+    root_path = '/media/ztu/Seagate-ztu/LIVE_HFR';
+    data_path = '/media/ztu/Seagate-ztu/LIVE_HFR';
+elseif strcmp(data_name, 'LIVE_VQA')
+    root_path = '/media/ztu/Seagate-ztu/LIVE_VQA';
+    data_path = '/media/ztu/Seagate-ztu/LIVE_VQA/videos';
 end
 
 %%
@@ -60,13 +66,23 @@ for i = 1:num_videos
         video_name = fullfile(data_path, filelist.category{i}, ...
             [num2str(filelist.resolution(i)),'P'],[filelist.vid{i},'.mkv']);
         yuv_name = fullfile(video_tmp, [filelist.vid{i}, '.yuv']);
+    elseif strcmp(data_name, 'LIVE_HFR')
+        strs = strsplit(filelist.Filename{i}, '_');
+        video_name = fullfile(data_path,strs{1},[filelist.Filename{i},'.webm']);
+        yuv_name = fullfile(video_tmp, [filelist.Filename{i}, '.yuv']);
+    elseif strcmp(data_name, 'LIVE_VQA')
+        strs = strsplit(filelist.filename{i}, '_');
+        video_name = fullfile(data_path, [strs{1}(1:2), '_Folder'], filelist.filename{i});
+        yuv_name = video_name;
     end
     fprintf('\n\nComputing features for %d sequence: %s\n', i, video_name);
 
     % decode video and store in temp dir
-    cmd = ['ffmpeg -loglevel error -y -i ', video_name, ...
-        ' -pix_fmt yuv420p -vsync 0 ', yuv_name];
-    system(cmd);  
+    if ~strcmp(video_name, yuv_name) 
+        cmd = ['ffmpeg -loglevel error -y -i ', video_name, ...
+            ' -pix_fmt yuv420p -vsync 0 ', yuv_name];
+        system(cmd);
+    end
 
     % get video meta data
     width = filelist.width(i);

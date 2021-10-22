@@ -29,9 +29,15 @@ function feats_frames = calc_RAPIQUE_features(test_video, width, height, ...
         this_YUV_frame = YUVread(test_file,[width height],fr);
         prev_YUV_frame = YUVread(test_file,[width height],max(1,fr-floor(framerate/3)));
         next_YUV_frame = YUVread(test_file,[width height],min(nb_frames-2,fr+floor(framerate/3)));
-        this_rgb = ycbcr2rgb(uint8(this_YUV_frame));
-    	prev_rgb = ycbcr2rgb(uint8(prev_YUV_frame));
-        next_rgb = ycbcr2rgb(uint8(next_YUV_frame));
+        %this_rgb = ycbcr2rgb(uint8(this_YUV_frame));
+    	%prev_rgb = ycbcr2rgb(uint8(prev_YUV_frame));
+        %next_rgb = ycbcr2rgb(uint8(next_YUV_frame));
+        this_rgb = reshape(convertYuvToRgb(reshape(this_YUV_frame, width * height, 3)), ...
+                          height, width, 3);
+        prev_rgb = reshape(convertYuvToRgb(reshape(prev_YUV_frame, width * height, 3)), ...
+                          height, width, 3);
+        next_rgb = reshape(convertYuvToRgb(reshape(next_YUV_frame, width * height, 3)), ...
+                          height, width, 3);
 
         % subsample to 512p resolution
         sside = min(size(this_YUV_frame,1), size(this_YUV_frame,2));
