@@ -91,6 +91,15 @@ $ python evaluate_bvqa_features_ordinal_classification.py
 If you use this code for your research, please cite our papers.
 
 ```
+@article{tu2021rapique,
+  title={RAPIQUE: Rapid and accurate video quality prediction of user generated content},
+  author={Tu, Zhengzhong and Yu, Xiangxu and Wang, Yilin and Birkbeck, Neil and Adsumilli, Balu and Bovik, Alan C},
+  journal={IEEE Open Journal of Signal Processing},
+  volume={2},
+  pages={425--440},
+  year={2021},
+  publisher={IEEE}
+}
 @article{tu2021ugc,
   title={UGC-VQA: Benchmarking blind video quality assessment for user generated content},
   author={Tu, Zhengzhong and Wang, Yilin and Birkbeck, Neil and Adsumilli, Balu and Bovik, Alan C},
